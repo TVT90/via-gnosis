@@ -38,6 +38,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;}
 
 .brand{display:flex;align-items:center;gap:12px;}
 .brand img{width:46px;height:46px;object-fit:contain;flex-shrink:0;}
+.brand .mark{width:38px;height:40px;flex-shrink:0;display:block;}
 .brand span{font-family:var(--serif);font-size:17px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-light);}
 .nav{display:flex;gap:30px;}
 .nav a{
