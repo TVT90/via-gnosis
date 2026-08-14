@@ -239,3 +239,13 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;}
 }
 a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto;}}
+
+
+/* ---------- PAGE D'ACCUEIL PLEIN ÉCRAN (aucun défilement) ---------- */
+body.splash{height:100vh;overflow:hidden;}
+body.splash .hero{min-height:100vh;height:100vh;}
+body.splash .hero-scroll{display:none;}
+@media (max-width:720px){
+  body.splash{height:100dvh;overflow:hidden;}
+  body.splash .hero{min-height:100dvh;height:100dvh;}
+}
