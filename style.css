@@ -50,10 +50,13 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;}
 
 /* HERO */
 .hero{
-  position:relative;min-height:72vh;display:flex;align-items:center;
-  padding:120px clamp(28px,5vw,96px) 90px;overflow:hidden;
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:120px clamp(28px,5vw,96px) 110px;overflow:hidden;background:var(--night);
 }
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 18%;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 18%;background-repeat:no-repeat;}
+@media (min-width:1000px){
+  .hero-bg{background-size:contain;background-position:center center;}
+}
 .hero-bg::after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,rgba(8,13,26,0.92) 0%,rgba(8,13,26,0.74) 20%,rgba(8,13,26,0.34) 42%,rgba(8,13,26,0.20) 68%,rgba(8,13,26,0.38) 100%);
