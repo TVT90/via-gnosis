@@ -107,8 +107,8 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;}
 .panel-text p{color:var(--muted);font-size:15.5px;margin-bottom:14px;}
 .panel-text .btn{margin-top:22px;}
 .panel-media{position:relative;min-height:420px;overflow:hidden;}
-.panel-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
-.panel-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--night-2) 0%,rgba(12,20,38,0.55) 18%,rgba(12,20,38,0) 42%);}
+.panel-media img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+.panel-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--night-2) 0%,rgba(12,20,38,0.62) 10%,rgba(12,20,38,0) 30%);}
 
 /* PILIERS */
 .pillars{
