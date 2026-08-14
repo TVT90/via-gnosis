@@ -53,10 +53,10 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;}
   position:relative;min-height:86vh;display:flex;align-items:center;
   padding:130px 44px 110px;overflow:hidden;
 }
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 35%;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center center;}
 .hero-bg::after{
   content:"";position:absolute;inset:0;
-  background:rgba(8,13,26,0.55);
+  background:rgba(8,13,26,0.42);
 }
 .hero-inner{position:relative;z-index:2;max-width:var(--wrap);margin:0 auto;width:100%;}
 .hero h1{
