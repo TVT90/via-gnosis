@@ -179,15 +179,24 @@ body.splash{height:100vh;overflow:hidden;}
   border:1px solid var(--line);background:var(--night-2);
   overflow:hidden;transition:border-color .3s;
 }
-.block:hover{border-color:var(--gold);}
+.block-link{cursor:pointer;}
+.block-link:hover{border-color:var(--gold);transform:translateY(-4px);}
+.block{transition:border-color .3s,transform .3s;}
+.block-link .block-media img{transition:transform .6s ease;}
+.block-link:hover .block-media img{transform:scale(1.04);}
+.block-body .more{
+  display:block;margin-top:16px;font-size:12px;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--cream);
+}
+.block-body .more::after{content:" →";color:var(--gold);}
 .block-media{position:relative;min-height:210px;overflow:hidden;}
 .block-media img{width:100%;height:100%;object-fit:cover;}
 .block-body{padding:30px clamp(22px,3vw,34px);}
 .block-body h3{font-size:23px;color:var(--gold-light);margin-bottom:10px;}
 .block-body p{color:var(--muted);font-size:15px;}
 .block-body .tag{
-  display:inline-block;margin-top:14px;font-size:11px;letter-spacing:0.16em;
-  text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:5px 12px;
+  display:inline-block;margin-top:14px;font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);
 }
 
 /* ---------- 8. BANDES DE SECTION ---------- */
