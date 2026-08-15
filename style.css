@@ -74,7 +74,7 @@ body.splash{height:100vh;overflow:hidden;}
   background-size:cover;background-position:center 18%;background-repeat:no-repeat;
 }
 @media (min-width:1000px){
-  .hero-bg{background-size:contain;background-position:center center;}
+  body.splash .hero-bg{background-size:contain;background-position:center center;}
 }
 .hero-bg::after{
   content:"";position:absolute;inset:0;
@@ -117,25 +117,30 @@ body.splash{height:100vh;overflow:hidden;}
 .btn-fill{background:var(--gold);color:var(--night);}
 .btn-fill:hover{background:var(--gold-light);border-color:var(--gold-light);}
 
-/* ---------- 4. EN-TÊTE DES PAGES INTERNES ---------- */
-.page-hero{
-  position:relative;min-height:52vh;display:flex;align-items:flex-end;
-  padding:150px var(--pad) 56px;overflow:hidden;
+/* ---------- 4. EN-TÊTE DES PAGES INTERNES (image puis titre) ---------- */
+.page-banner{
+  margin-top:74px;
+  width:100%;
+  height:clamp(220px,34vh,380px);
+  overflow:hidden;
 }
-.page-hero .hero-bg::after{background:rgba(8,13,26,0.62);}
-.page-hero-inner{position:relative;z-index:2;max-width:var(--wrap);margin:0 auto;width:100%;}
-.page-hero h1{
+.page-banner img{width:100%;height:100%;object-fit:cover;}
+.page-head{
+  max-width:var(--wrap);margin:0 auto;
+  padding:56px var(--pad) 0;
+}
+.page-head h1{
   font-size:clamp(38px,5.6vw,66px);color:var(--gold-light);
   letter-spacing:0.04em;margin-bottom:16px;
 }
-.page-hero p{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:640px;}
+.page-head p{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:640px;}
 .crumb{
   font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--gold);margin-bottom:18px;
 }
 
 /* ---------- 5. TEXTE COURANT ---------- */
-.rich{max-width:var(--wrap);margin:0 auto;padding:80px var(--pad);}
+.rich{max-width:var(--wrap);margin:0 auto;padding:44px var(--pad) 80px;}
 .rich-lead{
   font-family:var(--serif);font-size:clamp(21px,2.5vw,28px);
   color:var(--cream);line-height:1.45;max-width:760px;margin-bottom:20px;
