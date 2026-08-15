@@ -180,7 +180,6 @@ body.splash{height:100vh;overflow:hidden;}
   overflow:hidden;transition:border-color .3s;
 }
 .block-link{cursor:pointer;}
-.block-link .tag{display:none;}
 .block-link:hover{border-color:var(--gold);transform:translateY(-4px);}
 .block{transition:border-color .3s,transform .3s;}
 .block-link .block-media img{transition:transform .6s ease;}
@@ -201,6 +200,8 @@ body.splash{height:100vh;overflow:hidden;}
   display:inline-block;margin-top:14px;font-size:11px;letter-spacing:0.2em;
   text-transform:uppercase;color:var(--gold);
 }
+/* un encart cliquable porte un lien, jamais une étiquette */
+.block-link .block-body .tag{display:none;}
 
 /* ---------- 8. BANDES DE SECTION ---------- */
 .section-band{background:var(--night-2);padding:100px var(--pad);}
