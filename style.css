@@ -180,14 +180,17 @@ body.splash{height:100vh;overflow:hidden;}
   overflow:hidden;transition:border-color .3s;
 }
 .block-link{cursor:pointer;}
+.block-link .tag{display:none;}
 .block-link:hover{border-color:var(--gold);transform:translateY(-4px);}
 .block{transition:border-color .3s,transform .3s;}
 .block-link .block-media img{transition:transform .6s ease;}
 .block-link:hover .block-media img{transform:scale(1.04);}
 .block-body .more{
-  display:block;margin-top:16px;font-size:12px;letter-spacing:0.12em;
-  text-transform:uppercase;color:var(--cream);
+  display:block;margin-top:16px;font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);
+  transition:color .25s;
 }
+.block-link:hover .more{color:var(--gold-light);}
 .block-body .more::after{content:" →";color:var(--gold);}
 .block-media{position:relative;min-height:210px;overflow:hidden;}
 .block-media img{width:100%;height:100%;object-fit:cover;}
