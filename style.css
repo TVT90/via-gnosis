@@ -324,3 +324,15 @@ body.splash{height:100vh;overflow:hidden;}
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto;}
 }
+
+
+/* ---------- 14. PRESSE & AGENDA ---------- */
+.agenda-date{
+  display:block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+/* les scans d'articles se lisent par le haut, jamais recadrés au centre */
+.block-media img[src^="presse-"]{object-position:top center;}
+/* un encart d'agenda n'a pas d'image : le texte occupe toute la largeur */
+.block-agenda{grid-template-columns:1fr;border-left:2px solid var(--gold);}
+.block-agenda .block-body{padding:26px clamp(22px,3vw,34px);}
