@@ -214,7 +214,7 @@ body.splash{height:100vh;overflow:hidden;}
 /* ---------- 9. VIGNETTES PILIERS (image dessus, texte dessous) ---------- */
 .pillars{
   max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
-  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
 }
 .pillar{
   display:flex;flex-direction:column;
