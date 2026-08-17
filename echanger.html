@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Échanger — VIA GNOSIS</title>
-<meta name="description" content="Contacter VIA GNOSIS — Thierry Voitot, formations, missions de conseil et collaborations.">
+<meta name="description" content="Contacter VIA GNOSIS — Thierry Voitot : formations, missions de conseil et collaborations artistiques.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,35 +37,75 @@
 
 <section class="rich">
   <p class="rich-lead">Chaque projet commence par une conversation.</p>
-  <p>Formations et ateliers, missions de conseil en ingénierie pédagogique, projets culturels ou artistiques — n'hésitez pas à décrire votre contexte et vos objectifs.</p>
-  <p>Courriel : tvoitot.ia@gmail.com — Téléphone : 06 83 58 27 55</p>
+  <p>Formations et ateliers, missions de conseil en ingénierie pédagogique, projets culturels
+  ou artistiques — décrivez votre contexte et vos objectifs, je vous répondrai rapidement.</p>
 </section>
 
+<section class="contact-band">
+  <a class="contact-card" href="mailto:tvoitot.ia@gmail.com">
+    <span class="contact-label">Courriel</span>
+    <span class="contact-value">tvoitot.ia@gmail.com</span>
+  </a>
+  <a class="contact-card" href="tel:+33683582755">
+    <span class="contact-label">Téléphone</span>
+    <span class="contact-value">06 83 58 27 55</span>
+  </a>
+</section>
+
+<section class="rich">
+  <p class="eyebrow">Les prestations</p>
+  <p class="rich-lead">Ce que Via Gnosis peut prendre en charge.</p>
+</section>
 <section class="blocks">
-  <a href="formations.html" class="block block-link">
+  <article class="block">
     <div class="block-media"><img src="pilier-creer.jpg" alt="Formations &amp; ateliers"></div>
-    <div class="block-body"><h3>Formations &amp; ateliers</h3><p>Décrivez votre public, la durée souhaitée et le cadre — un devis personnalisé vous sera proposé.</p>
-      <span class="more">En savoir plus</span></div>
-  </a>
-  <a href="conseil.html" class="block block-link">
+    <div class="block-body"><h3>Formations &amp; ateliers</h3><p>Ateliers de création artistique avec IA, formations pour professionnels de la transmission, ateliers jeune public, interventions en milieu de soin. Durée, public et contenu adaptés à votre contexte, sur devis.</p><span class="tag">Devis personnalisé</span></div>
+  </article>
+  <article class="block">
     <div class="block-media"><img src="pilier-explorer.jpg" alt="Conseil &amp; ingénierie pédagogique"></div>
-    <div class="block-body"><h3>Conseil &amp; ingénierie pédagogique</h3><p>Conception de dispositifs de formation, structuration des savoirs, accompagnement des équipes.</p>
-      <span class="more">En savoir plus</span></div>
-  </a>
-  <a href="materialiser.html" class="block block-link">
+    <div class="block-body"><h3>Conseil &amp; ingénierie pédagogique</h3><p>Conception de dispositifs de formation, structuration et formalisation des savoirs d'une organisation, accompagnement des équipes. Vingt-huit ans d'expérience au service des institutions et des collectivités.</p><span class="tag">Missions</span></div>
+  </article>
+  <article class="block">
     <div class="block-media"><img src="creer-couture.jpg" alt="Collaborations artistiques"></div>
-    <div class="block-body"><h3>Collaborations artistiques</h3><p>Expositions, projets culturels, résidences ou créations communes.</p>
-      <span class="more">En savoir plus</span></div>
-  </a>
+    <div class="block-body"><h3>Collaborations artistiques</h3><p>Expositions, commandes d'œuvres, projets culturels, résidences ou créations communes — en arts visuels comme en musique.</p><span class="tag">Projets</span></div>
+  </article>
 </section>
 
-<section class="cta">
-  <div class="cta-fracture" aria-hidden="true"></div>
-  <div>
-    <h2>Prêt à démarrer ?</h2>
-    <p>tvoitot.ia@gmail.com — 06 83 58 27 55</p>
-  </div>
-  <a href="echanger.html" class="btn btn-fill">Échanger avec moi &nbsp;→</a>
+<section class="rich">
+  <p class="eyebrow">Formulaire</p>
+  <p class="rich-lead">Écrivez-moi directement.</p>
+</section>
+<section class="form-wrap">
+  <form class="contact-form" action="https://formspree.io/f/mbgrzdga" method="POST">
+    <div class="field-row">
+      <label>Nom
+        <input type="text" name="nom" required>
+      </label>
+      <label>Courriel
+        <input type="email" name="email" required>
+      </label>
+    </div>
+    <div class="field-row">
+      <label>Téléphone <span class="opt">(facultatif)</span>
+        <input type="tel" name="telephone">
+      </label>
+      <label>Objet
+        <select name="objet">
+          <option>Formation ou atelier</option>
+          <option>Conseil et ingénierie pédagogique</option>
+          <option>Collaboration artistique</option>
+          <option>Presse</option>
+          <option>Autre</option>
+        </select>
+      </label>
+    </div>
+    <label>Votre message
+      <textarea name="message" rows="7" required></textarea>
+    </label>
+    <input type="hidden" name="_subject" value="Nouveau message depuis via-gnosis.fr">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" class="btn btn-fill">Envoyer &nbsp;→</button>
+  </form>
 </section>
 
 <footer class="ftr">
