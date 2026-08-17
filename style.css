@@ -387,3 +387,6 @@ body.splash{height:100vh;overflow:hidden;}
   .contact-band{grid-template-columns:1fr;}
   .field-row{grid-template-columns:1fr;gap:0;}
 }
+
+/* un portrait en bandeau se cadre sur le regard */
+.page-banner img[src="fondateur-portrait.jpg"]{object-position:center 38%;}
