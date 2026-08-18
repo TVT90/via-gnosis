@@ -393,3 +393,6 @@ body.splash{height:100vh;overflow:hidden;}
 
 /* la photo du duo se cadre sur les visages, le bandeau étant très panoramique */
 .page-banner img[src="atelier-musical-bandeau.jpg"]{object-position:center 60%;}
+
+/* l'enfant à la lune : cadrage sur la tête et la main tendue */
+.page-banner img[src="materialiser-lune.jpg"]{object-position:center 22%;}
