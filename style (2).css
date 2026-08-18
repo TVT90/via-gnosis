@@ -185,9 +185,11 @@ body.splash{height:100vh;overflow:hidden;}
 .block-link .block-media img{transition:transform .6s ease;}
 .block-link:hover .block-media img{transform:scale(1.04);}
 .block-body .more{
-  display:block;margin-top:16px;font-size:12px;letter-spacing:0.12em;
-  text-transform:uppercase;color:var(--cream);
+  display:block;margin-top:16px;font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);
+  transition:color .25s;
 }
+.block-link:hover .more{color:var(--gold-light);}
 .block-body .more::after{content:" →";color:var(--gold);}
 .block-media{position:relative;min-height:210px;overflow:hidden;}
 .block-media img{width:100%;height:100%;object-fit:cover;}
@@ -198,6 +200,8 @@ body.splash{height:100vh;overflow:hidden;}
   display:inline-block;margin-top:14px;font-size:11px;letter-spacing:0.2em;
   text-transform:uppercase;color:var(--gold);
 }
+/* un encart cliquable porte un lien, jamais une étiquette */
+.block-link .block-body .tag{display:none;}
 
 /* ---------- 8. BANDES DE SECTION ---------- */
 .section-band{background:var(--night-2);padding:100px var(--pad);}
@@ -210,7 +214,7 @@ body.splash{height:100vh;overflow:hidden;}
 /* ---------- 9. VIGNETTES PILIERS (image dessus, texte dessous) ---------- */
 .pillars{
   max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
-  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
 }
 .pillar{
   display:flex;flex-direction:column;
@@ -320,3 +324,72 @@ body.splash{height:100vh;overflow:hidden;}
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto;}
 }
+
+
+/* ---------- 14. PRESSE & AGENDA ---------- */
+.agenda-date{
+  display:block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+/* les scans d'articles se lisent par le haut, jamais recadrés au centre */
+.block-media img[src^="presse-"]{object-position:top center;}
+/* un encart d'agenda n'a pas d'image : le texte occupe toute la largeur */
+.block-agenda{grid-template-columns:1fr;border-left:2px solid var(--gold);}
+.block-agenda .block-body{padding:26px clamp(22px,3vw,34px);}
+
+
+/* ---------- 15. CONTACT ET FORMULAIRE ---------- */
+.contact-band{
+  max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 40px;
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;
+}
+.contact-card{
+  display:block;padding:28px 30px;
+  background:var(--night-2);border:1px solid var(--line);
+  transition:border-color .3s,transform .3s,background .3s;
+}
+.contact-card:hover{border-color:var(--gold);transform:translateY(-4px);background:var(--night-3);}
+.contact-label{
+  display:block;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.contact-value{
+  display:block;font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);
+  color:var(--cream);line-height:1.2;
+}
+
+.form-wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 90px;}
+.contact-form{max-width:760px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.contact-form label{
+  display:block;margin-bottom:22px;
+  font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);
+}
+.contact-form .opt{text-transform:none;letter-spacing:0;color:var(--muted);font-size:12px;}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  display:block;width:100%;margin-top:9px;
+  padding:13px 15px;
+  background:var(--night-2);
+  border:1px solid var(--line);
+  color:var(--cream);
+  font-family:var(--sans);font-size:15px;font-weight:300;letter-spacing:0;text-transform:none;
+  transition:border-color .25s;
+}
+.contact-form textarea{resize:vertical;line-height:1.6;}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{outline:none;border-color:var(--gold);}
+.contact-form button{margin-top:8px;cursor:pointer;font-family:var(--sans);}
+
+@media (max-width:720px){
+  .contact-band{grid-template-columns:1fr;}
+  .field-row{grid-template-columns:1fr;gap:0;}
+}
+
+/* un portrait en bandeau se cadre sur le regard */
+.page-banner img[src="fondateur-portrait.jpg"]{object-position:center 38%;}
+
+/* la photo du duo se cadre sur les visages, le bandeau étant très panoramique */
+.page-banner img[src="atelier-musical-bandeau.jpg"]{object-position:center 24%;}
