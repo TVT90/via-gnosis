@@ -1,0 +1,395 @@
+/* ============================================================
+   VIA GNOSIS — feuille de style
+   Palette : bleu nuit + or. Aucune superposition de texte sur
+   les images des vignettes (image dessus, texte dessous).
+   ============================================================ */
+
+:root{
+  --night:#080D1A;
+  --night-2:#0C1426;
+  --night-3:#111B33;
+  --gold:#C9A227;
+  --gold-light:#E8C97A;
+  --cream:#F3EDE3;
+  --muted:rgba(243,237,227,0.66);
+  --line:rgba(232,201,122,0.22);
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Jost', sans-serif;
+  --wrap:1200px;
+  --pad:clamp(22px,4vw,44px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
+
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* ---------- 1. EN-TÊTE ---------- */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--pad);
+  background:var(--night);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand .mark{width:38px;height:40px;flex-shrink:0;display:block;}
+.brand span{
+  font-family:var(--serif);font-size:17px;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--gold-light);
+}
+.nav{display:flex;gap:30px;}
+.nav a{
+  position:relative;font-size:11.5px;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--muted);padding-bottom:4px;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.nav a:hover,.nav a.active{color:var(--gold-light);}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1);}
+
+/* ---------- 2. PAGE D'ACCUEIL (plein écran, sans défilement) ---------- */
+body.splash{height:100vh;overflow:hidden;}
+
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:120px var(--pad) 110px;overflow:hidden;background:var(--night);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center 18%;background-repeat:no-repeat;
+}
+@media (min-width:1000px){
+  body.splash .hero-bg{background-size:contain;background-position:center center;}
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,
+    rgba(8,13,26,0.92) 0%, rgba(8,13,26,0.74) 20%,
+    rgba(8,13,26,0.34) 42%, rgba(8,13,26,0.20) 68%,
+    rgba(8,13,26,0.38) 100%);
+}
+.hero-fracture{
+  position:absolute;top:0;left:0;width:3px;height:100%;z-index:1;
+  background:linear-gradient(180deg,transparent,var(--gold),var(--gold-light),transparent);
+  clip-path:polygon(50% 0%,100% 5%,20% 12%,100% 22%,25% 32%,95% 42%,30% 52%,100% 62%,22% 72%,90% 82%,40% 91%,50% 100%);
+  opacity:.8;
+}
+.hero-inner{position:relative;z-index:2;width:100%;}
+.hero-inner > *{max-width:600px;}
+.hero h1{
+  font-size:clamp(42px,5.4vw,74px);letter-spacing:0.06em;
+  color:var(--gold-light);margin-bottom:22px;
+  text-shadow:0 2px 24px rgba(8,13,26,0.85);
+}
+.hero-lead{
+  font-size:clamp(20px,2.3vw,27px);color:var(--cream);
+  line-height:1.35;margin-bottom:16px;
+  text-shadow:0 2px 14px rgba(8,13,26,0.9);
+}
+.hero-tag{
+  font-size:16px;color:var(--gold-light);margin-bottom:38px;
+  text-shadow:0 2px 14px rgba(8,13,26,0.9);
+}
+
+/* ---------- 3. BOUTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:15px 32px;border:1px solid var(--gold);color:var(--gold-light);
+  font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+  transition:background .3s,color .3s;
+}
+.btn:hover{background:var(--gold);color:var(--night);}
+.btn-fill{background:var(--gold);color:var(--night);}
+.btn-fill:hover{background:var(--gold-light);border-color:var(--gold-light);}
+
+/* ---------- 4. EN-TÊTE DES PAGES INTERNES (image puis titre) ---------- */
+.page-banner{
+  margin-top:74px;
+  width:100%;
+  height:clamp(220px,34vh,380px);
+  overflow:hidden;
+}
+.page-banner img{width:100%;height:100%;object-fit:cover;}
+.page-head{
+  max-width:var(--wrap);margin:0 auto;
+  padding:56px var(--pad) 0;
+}
+.page-head h1{
+  font-size:clamp(38px,5.6vw,66px);color:var(--gold-light);
+  letter-spacing:0.04em;margin-bottom:16px;
+}
+.page-head p{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:640px;}
+.crumb{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
+}
+
+/* ---------- 5. TEXTE COURANT ---------- */
+.rich{max-width:var(--wrap);margin:0 auto;padding:44px var(--pad) 80px;}
+.rich-lead{
+  font-family:var(--serif);font-size:clamp(21px,2.5vw,28px);
+  color:var(--cream);line-height:1.45;max-width:760px;margin-bottom:20px;
+}
+.rich p{color:var(--muted);font-size:16px;max-width:760px;margin-bottom:16px;}
+.eyebrow{
+  font-size:11px;letter-spacing:0.26em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+
+/* ---------- 6. PANNEAU (texte + image côte à côte) ---------- */
+.panel{
+  max-width:var(--wrap);margin:0 auto;
+  background:var(--night-2);border:1px solid var(--line);
+  display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;
+  overflow:hidden;
+}
+.panel-text{padding:58px clamp(26px,4vw,54px);}
+.panel-text h2{
+  font-size:clamp(28px,3.4vw,40px);margin-bottom:26px;
+  position:relative;padding-bottom:18px;
+}
+.panel-text h2::after{
+  content:"";position:absolute;left:0;bottom:0;
+  width:64px;height:1px;background:var(--gold);
+}
+.panel-text p{color:var(--muted);font-size:15.5px;margin-bottom:14px;}
+.panel-text .btn{margin-top:22px;}
+.panel-media{position:relative;min-height:420px;overflow:hidden;}
+.panel-media img{width:100%;height:100%;object-fit:cover;}
+
+/* ---------- 7. BLOCS ILLUSTRÉS (pages internes) ---------- */
+.blocks{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 90px;display:grid;gap:24px;}
+.block{
+  display:grid;grid-template-columns:300px 1fr;
+  border:1px solid var(--line);background:var(--night-2);
+  overflow:hidden;transition:border-color .3s;
+}
+.block-link{cursor:pointer;}
+.block-link:hover{border-color:var(--gold);transform:translateY(-4px);}
+.block{transition:border-color .3s,transform .3s;}
+.block-link .block-media img{transition:transform .6s ease;}
+.block-link:hover .block-media img{transform:scale(1.04);}
+.block-body .more{
+  display:block;margin-top:16px;font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);
+  transition:color .25s;
+}
+.block-link:hover .more{color:var(--gold-light);}
+.block-body .more::after{content:" →";color:var(--gold);}
+.block-media{position:relative;min-height:210px;overflow:hidden;}
+.block-media img{width:100%;height:100%;object-fit:cover;}
+.block-body{padding:30px clamp(22px,3vw,34px);}
+.block-body h3{font-size:23px;color:var(--gold-light);margin-bottom:10px;}
+.block-body p{color:var(--muted);font-size:15px;}
+.block-body .tag{
+  display:inline-block;margin-top:14px;font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);
+}
+/* un encart cliquable porte un lien, jamais une étiquette */
+.block-link .block-body .tag{display:none;}
+
+/* ---------- 8. BANDES DE SECTION ---------- */
+.section-band{background:var(--night-2);padding:100px var(--pad);}
+.band-head{max-width:var(--wrap);margin:0 auto 56px;}
+.band-head h2{font-size:clamp(28px,4vw,46px);color:var(--cream);margin-bottom:18px;}
+.band-lede{color:var(--muted);font-size:17px;max-width:600px;}
+.band-center{text-align:center;}
+.band-center .band-lede{margin-left:auto;margin-right:auto;}
+
+/* ---------- 9. VIGNETTES PILIERS (image dessus, texte dessous) ---------- */
+.pillars{
+  max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.pillar{
+  display:flex;flex-direction:column;
+  background:var(--night-3);border:1px solid var(--line);overflow:hidden;
+  transition:transform .3s ease,border-color .3s ease;
+}
+.pillar:hover{transform:translateY(-6px);border-color:var(--gold);}
+.pillar-media{aspect-ratio:1/1;overflow:hidden;}
+.pillar-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.pillar:hover .pillar-media img{transform:scale(1.05);}
+.pillar-body{padding:22px 20px 26px;display:flex;flex-direction:column;flex:1;}
+.pillar-icon{
+  width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold-light);margin-bottom:16px;
+}
+.pillar-icon svg{width:21px;height:21px;}
+.pillar h3{
+  font-size:22px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:8px;
+}
+.pillar p{font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:16px;flex:1;}
+.pillar .more{font-size:12px;letter-spacing:0.12em;color:var(--cream);}
+.pillar .more::after{content:" →";color:var(--gold);}
+
+/* ---------- 10. VIGNETTES PROJETS ---------- */
+.proj-grid{
+  max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;
+}
+.proj{
+  display:flex;flex-direction:column;text-align:left;
+  background:var(--night-3);border:1px solid var(--line);overflow:hidden;
+  transition:transform .3s ease,border-color .3s ease;
+}
+.proj:hover{transform:translateY(-6px);border-color:var(--gold);}
+.proj-media{aspect-ratio:4/5;overflow:hidden;}
+.proj-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.proj:hover .proj-media img{transform:scale(1.05);}
+.proj-body{padding:18px 18px 22px;}
+.proj-cat{
+  display:block;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:6px;
+}
+.proj h3{font-size:20px;color:var(--cream);margin-bottom:10px;line-height:1.2;}
+.proj .more{font-size:12px;letter-spacing:0.1em;color:var(--muted);}
+.proj .more::after{content:" →";color:var(--gold);}
+
+/* ---------- 11. BANDEAU D'APPEL ---------- */
+.cta{
+  position:relative;max-width:var(--wrap);margin:60px auto 90px;
+  border:1px solid var(--line);background:var(--night-2);
+  padding:52px clamp(26px,4vw,54px);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;overflow:hidden;
+}
+.cta-fracture{
+  position:absolute;top:0;left:8%;width:2px;height:100%;
+  background:linear-gradient(180deg,transparent,var(--gold),transparent);
+  clip-path:polygon(50% 0%,100% 8%,20% 18%,100% 28%,28% 40%,95% 50%,30% 62%,100% 72%,25% 84%,60% 92%,50% 100%);
+  opacity:.7;
+}
+.cta h2{font-size:clamp(26px,3.2vw,36px);color:var(--cream);margin-bottom:8px;position:relative;z-index:2;}
+.cta p{color:var(--muted);font-size:15px;position:relative;z-index:2;}
+.cta .btn{position:relative;z-index:2;}
+
+/* ---------- 12. PIED DE PAGE ---------- */
+.ftr{background:var(--night-2);border-top:1px solid var(--line);padding:64px 0 0;}
+.ftr-top{
+  max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 48px;
+  display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:34px;
+}
+.ftr-brand img{width:110px;margin-bottom:16px;}
+.ftr-brand p{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.ftr-brand .accent{color:var(--gold-light);margin-top:10px;}
+.ftr-col h4{
+  font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:16px;
+}
+.ftr-col a{display:block;font-size:13.5px;color:var(--muted);padding:4px 0;transition:color .2s;}
+.ftr-col a:hover{color:var(--gold-light);}
+.ftr-bot{
+  max-width:var(--wrap);margin:0 auto;padding:20px var(--pad) 34px;
+  border-top:1px solid rgba(232,201,122,0.14);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:var(--muted);
+}
+
+/* ---------- 13. ADAPTATION AUX PETITS ÉCRANS ---------- */
+@media (max-width:1000px){
+  .pillars{grid-template-columns:1fr 1fr;}
+  .panel{grid-template-columns:1fr;}
+  .panel-media{min-height:280px;}
+  .ftr-top{grid-template-columns:1fr 1fr;}
+  .block{grid-template-columns:240px 1fr;}
+}
+@media (max-width:720px){
+  .nav{display:none;}
+  .pillars{grid-template-columns:1fr;}
+  .proj-grid{grid-template-columns:1fr 1fr;}
+  .block{grid-template-columns:1fr;}
+  .block-media{min-height:200px;}
+  body.splash{height:100dvh;}
+  .hero{min-height:100dvh;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto;}
+}
+
+
+/* ---------- 14. PRESSE & AGENDA ---------- */
+.agenda-date{
+  display:block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+/* les scans d'articles se lisent par le haut, jamais recadrés au centre */
+.block-media img[src^="presse-"]{object-position:top center;}
+/* un encart d'agenda n'a pas d'image : le texte occupe toute la largeur */
+.block-agenda{grid-template-columns:1fr;border-left:2px solid var(--gold);}
+.block-agenda .block-body{padding:26px clamp(22px,3vw,34px);}
+
+
+/* ---------- 15. CONTACT ET FORMULAIRE ---------- */
+.contact-band{
+  max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 40px;
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;
+}
+.contact-card{
+  display:block;padding:28px 30px;
+  background:var(--night-2);border:1px solid var(--line);
+  transition:border-color .3s,transform .3s,background .3s;
+}
+.contact-card:hover{border-color:var(--gold);transform:translateY(-4px);background:var(--night-3);}
+.contact-label{
+  display:block;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.contact-value{
+  display:block;font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);
+  color:var(--cream);line-height:1.2;
+}
+
+.form-wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 90px;}
+.contact-form{max-width:760px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.contact-form label{
+  display:block;margin-bottom:22px;
+  font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);
+}
+.contact-form .opt{text-transform:none;letter-spacing:0;color:var(--muted);font-size:12px;}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  display:block;width:100%;margin-top:9px;
+  padding:13px 15px;
+  background:var(--night-2);
+  border:1px solid var(--line);
+  color:var(--cream);
+  font-family:var(--sans);font-size:15px;font-weight:300;letter-spacing:0;text-transform:none;
+  transition:border-color .25s;
+}
+.contact-form textarea{resize:vertical;line-height:1.6;}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{outline:none;border-color:var(--gold);}
+.contact-form button{margin-top:8px;cursor:pointer;font-family:var(--sans);}
+
+@media (max-width:720px){
+  .contact-band{grid-template-columns:1fr;}
+  .field-row{grid-template-columns:1fr;gap:0;}
+}
+
+/* un portrait en bandeau se cadre sur le regard */
+.page-banner img[src="fondateur-portrait.jpg"]{object-position:center 38%;}
+
+/* la photo du duo se cadre sur les visages, le bandeau étant très panoramique */
+.page-banner img[src="atelier-musical-bandeau.jpg"]{object-position:center 60%;}
