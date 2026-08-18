@@ -396,3 +396,6 @@ body.splash{height:100vh;overflow:hidden;}
 
 /* l'enfant à la lune : cadrage sur la tête et la main tendue */
 .page-banner img[src="materialiser-lune.jpg"]{object-position:center 22%;}
+
+/* le cahier Jack : cadrage sur le visage du jeune chanteur */
+.page-banner img[src="cahiers-bandeau.jpg"]{object-position:center 20%;}
