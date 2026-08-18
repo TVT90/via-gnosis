@@ -390,3 +390,6 @@ body.splash{height:100vh;overflow:hidden;}
 
 /* un portrait en bandeau se cadre sur le regard */
 .page-banner img[src="fondateur-portrait.jpg"]{object-position:center 38%;}
+
+/* la photo du duo se cadre sur les visages, le bandeau étant très panoramique */
+.page-banner img[src="atelier-musical-bandeau.jpg"]{object-position:center 60%;}
