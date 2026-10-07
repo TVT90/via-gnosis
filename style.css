@@ -146,6 +146,8 @@ body.splash{height:100vh;overflow:hidden;}
   color:var(--cream);line-height:1.45;max-width:760px;margin-bottom:20px;
 }
 .rich p{color:var(--muted);font-size:16px;max-width:760px;margin-bottom:16px;}
+.rich p a{color:var(--gold-light);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+.rich p a:hover{color:var(--gold);}
 .eyebrow{
   font-size:11px;letter-spacing:0.26em;text-transform:uppercase;
   color:var(--gold);margin-bottom:14px;
@@ -285,7 +287,7 @@ body.splash{height:100vh;overflow:hidden;}
 .ftr{background:var(--night-2);border-top:1px solid var(--line);padding:64px 0 0;}
 .ftr-top{
   max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 48px;
-  display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:34px;
+  display:grid;grid-template-columns:1.4fr repeat(5,1fr);gap:28px;
 }
 .ftr-brand img{width:110px;margin-bottom:16px;}
 .ftr-brand p{font-size:13.5px;color:var(--muted);line-height:1.65;}
@@ -304,6 +306,9 @@ body.splash{height:100vh;overflow:hidden;}
 }
 
 /* ---------- 13. ADAPTATION AUX PETITS ÉCRANS ---------- */
+@media (max-width:1200px){
+  .ftr-top{grid-template-columns:repeat(3,1fr);}
+}
 @media (max-width:1000px){
   .pillars{grid-template-columns:1fr 1fr;}
   .panel{grid-template-columns:1fr;}
