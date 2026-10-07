@@ -42,10 +42,23 @@ def en_tete(rubrique):
         f'    <a href="{f}"{ACTIF if r == rubrique else ""}>{t}</a>' for r, f, t in MENU)
     return f'''<header class="hdr">
   <a href="index.html" class="brand">{LOGO_SVG}<span>Via Gnosis</span></a>
-  <nav class="nav">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+    <span class="nav-burger" aria-hidden="true"></span>
+  </button>
+  <nav class="nav" id="menu">
 {liens}
   </nav>
-</header>'''
+</header>
+<script>
+(function(){{
+  var t=document.querySelector('.nav-toggle'),n=document.getElementById('menu');
+  if(!t||!n)return;
+  function set(open){{t.setAttribute('aria-expanded',open?'true':'false');t.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');}}
+  t.addEventListener('click',function(){{set(t.getAttribute('aria-expanded')!=='true');}});
+  n.addEventListener('click',function(e){{if(e.target.closest('a'))set(false);}});
+  document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false);}});
+}})();
+</script>'''
 
 def pied():
     cols = []
